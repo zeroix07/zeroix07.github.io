@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="pdf-fallback">
                     <i class="fas fa-file-pdf"></i>
                     <p>PDF preview not available</p>
-                    <a href="https://zeroix07.github.io/cv/CV_FADHEL MUHAMMAD APRIANSYAH..pdf" download class="toolbar-btn">
+                    <a href="cv/CV_FADHEL MUHAMMAD APRIANSYAH..pdf" download class="toolbar-btn">
                         <i class="fas fa-download"></i> Download PDF
                     </a>
                 </div>
