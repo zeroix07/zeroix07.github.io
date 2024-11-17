@@ -82,3 +82,37 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Add this to your index.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if PDF viewer is loaded correctly
+    const pdfViewer = document.querySelector('.pdf-preview-alt');
+    if (pdfViewer) {
+        pdfViewer.addEventListener('error', function() {
+            this.parentElement.innerHTML = `
+                <div class="pdf-fallback">
+                    <i class="fas fa-file-pdf"></i>
+                    <p>PDF preview not available</p>
+                    <a href="https://zeroix07.github.io/cv/CV_FADHEL MUHAMMAD APRIANSYAH..pdf" download class="toolbar-btn">
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                </div>
+            `;
+        });
+    }
+
+    // Handle modal for mobile devices
+    function adjustModalForMobile() {
+        const modal = document.getElementById('pdf-modal');
+        if (window.innerWidth <= 768) {
+            modal.style.padding = '0';
+            document.querySelector('.modal-content').style.borderRadius = '0';
+        } else {
+            modal.style.padding = '1rem';
+            document.querySelector('.modal-content').style.borderRadius = '12px';
+        }
+    }
+
+    window.addEventListener('resize', adjustModalForMobile);
+    adjustModalForMobile(); // Initial check
+});
